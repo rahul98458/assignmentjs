@@ -20,8 +20,14 @@ const roundOffVal = Math.floor(randNum)
 console.log(randNum)
 console.log(roundOffVal)
 if(roundOffVal<3)
-console.log('lesser')
+{
+console.log(roundOffVal +' is lesser than 3')
+}
 else if(roundOffVal == 3)
-console.log('equal')
+{
+console.log(roundOffVal + 'is equal to 3')
+}
 else
-console.log('greataer')
+{
+console.log(roundOffVal + 'greataer than 3')
+}
