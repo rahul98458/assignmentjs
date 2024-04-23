@@ -16,8 +16,12 @@ console.log(c)
 //console.log "lesser than 3" else "Greater"
 
 const randNum = Math.random() * 5;
+const roundOffVal = Math.floor(randNum)
 console.log(randNum)
-if(randNum<3)
+console.log(roundOffVal)
+if(roundOffVal<3)
 console.log('lesser')
+else if(roundOffVal == 3)
+console.log('equal')
 else
 console.log('greataer')
