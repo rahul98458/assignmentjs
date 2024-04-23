@@ -10,3 +10,14 @@ const a = 10
 const b = '10'
 const c = (a===b)
 console.log(c)
+
+
+// generate a random number between 0 and 5, if it is lesser than 3,
+//console.log "lesser than 3" else "Greater"
+
+const randNum = Math.random() * 5;
+console.log(randNum)
+if(randNum<3)
+console.log('lesser')
+else
+console.log('greataer')
