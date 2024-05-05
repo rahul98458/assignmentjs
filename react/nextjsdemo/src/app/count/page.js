@@ -9,7 +9,7 @@ let [num,newNum] = useState('')
     ['7','8','9'],
     ['4','5','6'],
     ['1','2','3'],
-    ['0']
+    ['0','00','.']
   ]
 
   const symbol = ['+','-','*','/','=','⌫']
@@ -25,6 +25,10 @@ let [num,newNum] = useState('')
   }
 
   const handleClickSymbol=(symbol)=>{
+        
+    let lChar =  num.slice(-1)
+       
+
     if(symbol === '=')
      {
       const output = eval(num)
@@ -35,6 +39,10 @@ let [num,newNum] = useState('')
       let newString = num.slice(0, -1)
       newNum(newString)
     }
+    else if('+' === lChar || '-' === lChar || '/' === lChar || '*' === lChar)
+      {
+       return
+     }
     else
       {
       newNum(num+symbol)
