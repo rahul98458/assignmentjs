@@ -29,17 +29,21 @@ let [num,newNum] = useState('')
     let lChar =  num.slice(-1)
        
 
-    if(symbol === '=')
+    if(symbol === '=' )
      {
+     
+      
       const output = eval(num)
        newNum(output)
+    
+      
      }
      else if(symbol === '⌫')
      {
       let newString = num.slice(0, -1)
       newNum(newString)
     }
-    else if('+' === lChar || '-' === lChar || '/' === lChar || '*' === lChar)
+    else if('+' === lChar || '-' === lChar || '/' === lChar || '*' === lChar )
       {
        return
      }
