@@ -12,10 +12,28 @@ const boxSlice = createSlice({
   initialState,
   reducers: {
     changeHeight(state) {
-        state.height=state.height+10
+      if(state.borderRadius==='50%')
+        {
+        const newHeight = state.height + 10
+        state.height = newHeight
+        state.width=newHeight
+        }
+        else
+        {
+          state.height=state.height+10
+        }
     },
     changeWidth(state) {
-      state.width=state.width+10
+      if(state.borderRadius==='50%')
+        {
+        const newWidth = state.width + 10
+        state.height = newWidth
+        state.width= newWidth
+        }
+        else
+        {
+          state.width=state.width + 10
+        }
   },
   changeColor(state,actions) {
     state.backgroundColor=actions.payload
