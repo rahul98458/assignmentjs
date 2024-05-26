@@ -1,5 +1,5 @@
 'use client'
-import { changeColor, changeHeight, changeShape, changeWidth } from '@/redux/reducerSlices/boxSlice'
+import { changeColor, changeHeight, changeShape, changeWidth,sideShift,udShift,normalPosition } from '@/redux/reducerSlices/boxSlice'
 import { Button, Input } from '@nextui-org/react'
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
@@ -7,7 +7,7 @@ import { useSelector,useDispatch } from 'react-redux'
 
 
 const box = () => {
-    const {backgroundColor,width,height,borderRadius} = useSelector(state=>state.box)
+    const {backgroundColor,width,height,borderRadius,left,top} = useSelector(state=>state.box)
     const dispatch = useDispatch()
     
     const generateArea = () =>
@@ -23,9 +23,14 @@ const box = () => {
       }
     
   return (
-    <div>
-    <div style={{backgroundColor:backgroundColor , height:height , width : width,borderRadius:borderRadius}}> 
+    <div className = 'flex items-center flex-col p-20'>
+    <div style={{backgroundColor:backgroundColor , height:height , width : width,borderRadius:borderRadius , position:'relative' , left,top }}> 
     </div>
+    <Button onClick={()=>dispatch(udShift(-100))}>top</Button>
+    <Button onClick={()=>dispatch(udShift(100))}>bottom</Button>
+    <Button onClick={()=>dispatch(sideShift(100))}>right</Button>
+    <Button onClick={()=>dispatch(sideShift(-100))}>left</Button>
+    <Button onClick={()=>dispatch(normalPosition())}>Normal Position</Button>
       <Button onClick={()=>dispatch(changeWidth())}>+width</Button>
        <Button onClick={()=>dispatch(changeHeight())}>+height</Button>
        <Button onClick={()=>dispatch(changeShape())}>change shape</Button>
