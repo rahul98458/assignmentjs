@@ -52,9 +52,11 @@ const boxSlice = createSlice({
       },
       udShift(state,actions) {
         state.top=actions.payload
+        state.left=0
         },
         sideShift(state,actions) {
           state.left=actions.payload
+          state.top=0
           },
           normalPosition(state) {
             state.left=0

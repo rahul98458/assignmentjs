@@ -24,7 +24,7 @@ const box = () => {
     
   return (
     <div className = 'flex items-center flex-col p-20'>
-    <div style={{backgroundColor:backgroundColor , height:height , width : width,borderRadius:borderRadius , position:'relative' , left,top }}> 
+    <div style={{backgroundColor:backgroundColor , height:height , width : width,borderRadius:borderRadius , position:'relative' , left,top ,margin:100}}> 
     </div>
     <Button onClick={()=>dispatch(udShift(-100))}>top</Button>
     <Button onClick={()=>dispatch(udShift(100))}>bottom</Button>
